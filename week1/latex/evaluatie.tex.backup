@@ -1,0 +1,12 @@
+\section{Evaluatie}
+De concreetheid van het probleem, gecombineerd met de geringe informatie die gevraagd wordt van de gebruiker, zorgt voor eenvoudige interpretatie. Het probleem kan slechts op beperkte wijze ge\"interpreteerd worden en is slechts op een enkele wijze eenvoudig uit te voeren. Enkel door het gebruik van de stelling van Pythagoras is dit probleem eenvoudig op te lossen.
+
+Van de gebruiker wordt verwacht dat hij de gesloten driehoek bedoelt die wordt gevormd met de drie ingevoerde zijden. Dus geen open driehoek of een driehoek waar nog een lijn uit doorloopt. Het programma is dus niet geschikt voor een geautomatiseerd systeem waarbij dit soort ``driehoeken'' mogelijk voor zouden kunnen komen.
+
+Vanwege de geringe informatie die van de gebruiker gevraagd wordt, enkel de drie zijden van de driehoek, is het gebruiksgemak van het programma hoog. Het kan nog worden verbeterd door een visuele representatie van de driehoek te geven.
+
+In eerdere versies van de code werden drie extra variabelen gebruikt om ze te sorteren, maar uiteindelijk bleek \'e\'en extra variabele ({\tt x}) te voldoen. Er is ook gekeken naar een systeem zonder extra variabelen, doch dat zou leiden tot meer statements, wat eindelijk meer processorkracht vereist.
+
+Het is eventueel mogelijk om dit probleem met goniometrische functies op te lossen, dit is echter een omweg en er moeten hiervoor nieuwe wiskundige functies worden ge\"importeerd.
+
+We hebben ook nagedacht over of het tot conflicten zou leiden als er twee zijden waren die beide de grootste zijn. Gebleken is dat dit niet tot conflicten leidt, omdat de hoek tegenover beide zijden natuurlijk ook gelijk is.

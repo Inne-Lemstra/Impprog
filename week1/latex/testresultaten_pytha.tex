@@ -1,0 +1,71 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+
+\usepackage[dutch]{babel}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+%Packages voor ´Mooie code in LaTeX´
+\usepackage{color}
+\usepackage{listings}
+\usepackage{bold-extra}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+
+\section{testresultaten}
+\begin{itemize}
+ \item invoer 1 (een rechthoekige driehoek)
+\begin{lstlisting}
+ 3
+ 4
+ 5
+\end{lstlisting}
+uitvoer: {\tt Dit is een rechthoekige driehoek.}
+\\
+\item invoer 2 (willekeurige invoer.)
+\begin{lstlisting}
+ 7
+ 4
+ 5
+\end{lstlisting}
+uitvoer: {\tt Dit is een stomphoekige driehoek.}
+\\
+\item invoer 3 (een gelijkbenige driehoek.)
+\begin{lstlisting}
+ 5
+ 3
+ 5
+\end{lstlisting}
+uitvoer: {\tt Dit is een scherphoekige driehoek.}
+\\
+\item invoer 4 (een gelijkzijdige driehoek.)
+\begin{lstlisting}
+ 6
+ 6
+ 6
+\end{lstlisting}
+uitvoer: {\tt Dit is een scherphoekige driehoek.}
+\\
+\item invoer 5 (zijde A en zijde B kunnen elkaar nooit raken.)
+\begin{lstlisting}
+ 6
+ 9
+ 2
+\end{lstlisting}
+uitvoer: {\tt Dit is geen driehoek.}
+
+\end{itemize}
+
+
+
+
+
+
+\end{document}

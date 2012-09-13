@@ -1,0 +1,129 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[dutch]{babel}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+% Packages voor ´Mooie code in LaTeX´
+\usepackage{color}
+\usepackage{listings}
+\usepackage{bold-extra}
+
+% Opening
+\title{Pythagoras, Imperatief Programmeren}
+\author{Han Kruiger, s1971190 \and Inne Lemstra, s1928473}
+\date{\today}
+
+% Definities voor ´Mooie code in LaTeX´
+\definecolor{light-gray}{gray}{0.95}
+\lstset{
+  language=c,				% the language of your code
+  basicstyle=\ttfamily,			% the default font
+  numbers=left,
+  numberstyle=\footnotesize,		% the text - size
+  stepnumber=1,				% the step between two line - numbers
+  numbersep=5pt,
+  backgroundcolor=\color{light-gray},	% background color
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  frame=single,				% add a frame around the code
+  tabsize=2,				% sets default tabsize to 2 spaces
+  captionpos=t,
+  breaklines=true,
+  breakatwhitespace=false,
+}
+
+\begin{document}
+
+\maketitle
+Docent: Arnold Meijster
+
+\begin{abstract}
+Is een driehoek scherp, rechthoekig, of stomp? Dit programma lost het voor u op.
+\end{abstract}
+
+\section{Probleemomschrijving}
+Er werd gevraagd naar een programma dat drie lengtes van een driehoek inleest, en van deze waarden analyseert of ze een scherpe, rechthoekige of stompe driehoek vormen.\footnote{Dat wil zeggen, is de hoek tegenover de grootste zijde groter, kleiner, of gelijk aan 90\textdegree?} De lengtes worden door de gebruiker gegeven in gehele centimeters.
+
+\section{Probleemanalyse}
+
+Om de driehoek te analyseren met de stelling van Pythagoras moeten de zijden van de driehoek eerst worden gesorteerd op grootte.
+
+De grootste zijde wordt $c$ genoemd, en de twee resterende zijden $a$ en $b$,wordt de oplossing als volgend gesteld:
+
+\begin{enumerate}
+ \item Als $a^2 + b^2 < c^2$ dan is de driehoek stomp.
+ \item Als $a^2 + b^2 > c^2$ dan is de driehoek scherp.
+ \item Als $a^2 + b^2 = c^2$ dan is de driehoek rechthoekig.
+\end{enumerate}
+
+Er wordt vanuit gegaan dat punt 3 (de stelling van Pythagoras) als gegeven wordt beschouwd.
+
+De motivatie achter punt 1 is dat als $c^2$ groter wordt gemaakt dan $a^2 + b^2$, de zijden $a$ en $b$ als het ware uit elkaar getrokken worden. Bij visualisatie is op te merken dat de hoek tussen $a$ en $b$ groter wordt dan 90\textdegree.
+
+Voor punt 2 geldt dezelfde motivatie als voor punt 1, maar dan de andere kant op geredeneerd.
+
+Dit voorgaande gaat er echter vanuit dat er met elke drie lengtes een driehoek gevormd kan worden. Dit hoeft echter niet altijd het geval te zijn! Als zijde $a$ en zijde $b$ samen niet groter zijn dan $c$ kan er geen driehoek gevormd worden.
+
+\section{Ontwerp}
+Nadat alle variabelen zijn gedeclareerd moeten de waarden door de gebruiker worden ingevoerd. Dit gebeurd in \'e\'en regel met het commando {\tt scanf(\textquotedblright\%d \%d \%d\textquotedblright, \&a, \&b, \&c)}.
+
+Bij het omzetten van deze probleemanalyse naar code, moeten eerst de zijden van de driehoek aan de juiste variabelen toe worden gewezen: De grootste waarde in de variabele {\tt c}, de andere twee in {\tt a} en {\tt b}. Dit wordt gedaan met een extra vierde variabele, {\tt x}.
+
+Nu alle waarden in de correcte variabelen zijn geplaatst, is de variabele {\tt x} overbodig; deze wordt verder in het programma ook niet meer gebruikt. De andere drie gebruiken worden nog de testen mee uit te voeren.
+
+Voor de test volgorde is het noodzakelijk om eerst te testen of het een geldige driehoek is, dit om onjuistheden te voorkomen. Als een van de {\tt if}-statements {\tt 1} teruggeeft (dus {\tt TRUE}), wordt de bijbehorende uitvoer gegeven met het commando {\tt printf()}.
+
+\newpage
+
+\section{Programmatekst}
+
+% Dit importeert de code uit ´pythagoras.c´.
+\lstinputlisting[caption=Pythagoras]{pythagoras.c}
+
+\section{Testresultaten}
+\begin{itemize}
+ \item Invoer 1 (een rechthoekige driehoek)
+\begin{lstlisting}
+ 3 4 5
+\end{lstlisting}
+Uitvoer: {\tt Dit is een rechthoekige driehoek.}
+\\
+\item Invoer 2 (een stomphoekige driehoek)
+\begin{lstlisting}
+ 7 4 5
+\end{lstlisting}
+Uitvoer: {\tt Dit is een stomphoekige driehoek.}
+\\
+\item Invoer 3 (een (scherphoekige) gelijkbenige driehoek)
+\begin{lstlisting}
+ 5 3 5
+\end{lstlisting}
+Uitvoer: {\tt Dit is een scherphoekige driehoek.}
+\\
+\item Invoer 4 (een gelijkzijdige (en dus scherphoekige) driehoek)
+\begin{lstlisting}
+ 6 6 6
+\end{lstlisting}
+Uitvoer: {\tt Dit is een scherphoekige driehoek.}
+\\
+\item Invoer 5 (zijde $a$ en zijde $b$ kunnen elkaar nooit raken)
+\begin{lstlisting}
+ 6 9 2
+\end{lstlisting}
+Uitvoer: {\tt Dit is geen driehoek.}
+\\
+\item Invoer 6 (drie punten op \'e\'en lijn)
+\begin{lstlisting}
+ 10 4 6
+\end{lstlisting}
+Uitvoer: {\tt Dit is geen driehoek.}
+
+\end{itemize}
+
+\newpage
+
+\input{evaluatie.tex}
+
+\end{document}

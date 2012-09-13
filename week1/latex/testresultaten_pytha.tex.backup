@@ -1,0 +1,62 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+
+\usepackage[dutch]{babel}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+%Packages voor ´Mooie code in LaTeX´
+\usepackage{color}
+\usepackage{listings}
+\usepackage{bold-extra}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{testresultaten}
+\begin{itemize}
+ \item invoer
+\begin{lstlisting}
+ 3
+ 4
+ 5
+\end{lstlisting}
+uitvoer: {\tt Dit is een rechthoekige driehoek.}
+\begin{lstlisting}
+ 7
+ 4
+ 5
+\end{lstlisting}
+uitvoer: {\tt Dit is een stomphoekige driehoek.}
+\begin{lstlisting}
+ 6
+ 9
+ 2
+\end{lstlisting}
+uitvoer: {\tt Dit is geen driehoek.}
+
+
+
+
+
+
+
+
+
+\end{itemize}
+
+
+
+
+
+
+\end{document}
