@@ -7,11 +7,11 @@ int main() {
   printf("Van welk getal moet de faculteit worden berekend: ");
   scanf("%d", &invoer);
   int k;
-  for (k = 1; k < invoer; k++) {
+  for (k = 1; k <= invoer; k++) {
     resultaat *= k;
   }
   
-  printf("De faculteit van %d is %ld", invoer, resultaat);
+  printf("De faculteit van %d is %ld\n", invoer, resultaat);
   
   return 0;
 }
