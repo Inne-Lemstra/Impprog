@@ -11,7 +11,7 @@ int main() {
     resultaat *= k;
   }
   
-  printf("De faculteit van %d is %l", invoer, resultaat);
+  printf("De faculteit van %d is %ld", invoer, resultaat);
   
   return 0;
 }
