@@ -37,11 +37,7 @@ int main() {
     
     geldsinaas= sinaasindex * sinaasappelPrijs;
     for(grapeindex = 0; grapeindex <= maxgrape; grapeindex++){
-      if(meloenPrijs==0){
-	maxmel = 100 - sinaasindex - grapeindex;
-      }else{
-	maxmel= (10000 - sinaasindex * sinaasappelPrijs - grapeindex * grapefruitPrijs)/meloenPrijs;
-      }
+      maxmel = 100 - sinaasindex - grapeindex;
       
       geldgrape = grapeindex * grapefruitPrijs;
       geldmel = maxmel * meloenPrijs;
