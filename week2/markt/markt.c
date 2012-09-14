@@ -14,8 +14,8 @@ int main() {
   int maxsinaas, maxgrape, maxmel;
   if(sinaasappelPrijs==0){
     maxsinaas= 99;
-  }else{
-  maxsinaas = 10000 / sinaasappelPrijs;
+  } else {
+    maxsinaas = 10000 / sinaasappelPrijs;
   }
 
   
@@ -23,34 +23,33 @@ int main() {
   
   int sinaasindex;
   int grapeindex;
-  
-  
+    
   int geldsinaas;
   int geldgrape;
   int geldmel;
   
   for(sinaasindex=0; sinaasindex<=maxsinaas; sinaasindex++){
-	if(grapefruitPrijs==0){
-	  maxgrape = 100 - sinaasindex;
-	}else{
-	  maxgrape = (10000 - sinaasindex * sinaasappelPrijs)/grapefruitPrijs;
-	}
-	geldsinaas= sinaasindex * sinaasappelPrijs;
-		
-		for(grapeindex = 0; grapeindex <= maxgrape; grapeindex++){
-			if(meloenPrijs==0){
-			  maxmel = 100 - sinaasindex - grapeindex;
-			}else{		
-			maxmel= (10000 - sinaasindex * sinaasappelPrijs - grapeindex * grapefruitPrijs)/meloenPrijs;
-			}
-			
-			geldgrape = grapeindex * grapefruitPrijs;
-			geldmel = maxmel * meloenPrijs;
-			
-			if(10000%(geldsinaas + geldgrape + geldmel) == 0 && (sinaasindex + grapeindex + maxmel == 100)){
-				printf("%d\t\t%d\t\t%d \n", sinaasindex, grapeindex, maxmel);
-			}
-		}
-	}
-    return 0;
-}	
+    if(grapefruitPrijs==0){
+      maxgrape = 100 - sinaasindex;
+    } else {
+      maxgrape = (10000 - sinaasindex * sinaasappelPrijs)/grapefruitPrijs;
+    }
+    
+    geldsinaas= sinaasindex * sinaasappelPrijs;
+    for(grapeindex = 0; grapeindex <= maxgrape; grapeindex++){
+      if(meloenPrijs==0){
+	maxmel = 100 - sinaasindex - grapeindex;
+      }else{
+	maxmel= (10000 - sinaasindex * sinaasappelPrijs - grapeindex * grapefruitPrijs)/meloenPrijs;
+      }
+      
+      geldgrape = grapeindex * grapefruitPrijs;
+      geldmel = maxmel * meloenPrijs;
+      
+      if(10000 - (geldsinaas + geldgrape + geldmel) == 0 && (sinaasindex + grapeindex + maxmel == 100)){
+	printf("%d\t\t%d\t\t%d \n", sinaasindex, grapeindex, maxmel);
+      }
+    }
+  }
+  return 0;
+}
