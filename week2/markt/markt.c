@@ -29,6 +29,7 @@ int main() {
   int geldmel;
   
   for(sinaasindex=0; sinaasindex<=maxsinaas; sinaasindex++){
+
     if(grapefruitPrijs==0){
       maxgrape = 100 - sinaasindex;
     } else {
@@ -49,3 +50,4 @@ int main() {
   }
   return 0;
 }
+
