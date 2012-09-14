@@ -23,8 +23,20 @@ int main() {
   int grapeindex;
   int melindex;
   
-  for(sinaasIndex=0; sinaasindex<=maxsinaas; sinaasindex++){
-	maxgrape=10000
+  int geldsinaas;
+  int geldgrape;
+  int geldmel;
+  
+  for(sinaasindex=0; sinaasindex<=maxsinaas; sinaasindex++){
+	maxgrape = (10000 - sinaasindex * sinaasappelPrijs)/grapefruitPrijs
+		geldsinaas= sinaasindex * sinaasappelPrijs
+		for(grapeindex = 0; grapeindex <= maxgrape; grapeindex++){
+			maxmel= (10000 - sinaasindex * sinaasPrijs - grapeindex * grapefruitPrijs)/meloenPrijs
+			geldgrape = grapeindex * grapefruitPrijs
+			geldmel = melindex * melPrijs
+			if(10000%(geldsinaas + gelgrape + geldmel) && sinaasindex + grapeindex + meloenindex == 100){
+			printf("d")
+			
   
   
   
