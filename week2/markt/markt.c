@@ -11,6 +11,7 @@ int main() {
   printf("De prijs van een meloen     : ");
   scanf("%d", &meloenPrijs);
   putchar('\n');
+  
   int maxsinaas, maxgrape, maxmel;
   if(sinaasappelPrijs==0){
     maxsinaas= 99;
@@ -23,7 +24,7 @@ int main() {
   
   int sinaasindex;
   int grapeindex;
-    
+  
   int geldsinaas;
   int geldgrape;
   int geldmel;
@@ -39,7 +40,9 @@ int main() {
     geldsinaas= sinaasindex * sinaasappelPrijs;
     for(grapeindex = 0; grapeindex <= maxgrape; grapeindex++){
       maxmel = 100 - sinaasindex - grapeindex;
-      
+      if (maxmel < 0) {
+	break;
+      }
       geldgrape = grapeindex * grapefruitPrijs;
       geldmel = maxmel * meloenPrijs;
       
