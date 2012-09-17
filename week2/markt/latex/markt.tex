@@ -10,6 +10,49 @@
 \usepackage{bold-extra}
 
 % Opening
-\title{Pythagoras, Imperatief Programmeren}
+\title{Markt, Imperatief Programmeren}
 \author{Han Kruiger, s1971190 \and Inne Lemstra, s1928473}
 \date{\today}
+
+% Definities voor ´Mooie code in LaTeX´
+\definecolor{light-gray}{gray}{0.95}
+\lstset{
+  language=c,				% the language of your code
+  basicstyle=\ttfamily,			% the default font
+  numbers=left,
+  numberstyle=\footnotesize,		% the text - size
+  stepnumber=1,				% the step between two line - numbers
+  numbersep=5pt,
+  backgroundcolor=\color{light-gray},	% background color
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  frame=single,				% add a frame around the code
+  tabsize=2,				% sets default tabsize to 2 spaces
+  captionpos=t,
+  breaklines=true,
+  breakatwhitespace=false,
+}
+
+\begin{document}
+
+\maketitle
+Docent: Arnold Meijster
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Probleemomschrijving}
+\input{probleemomschrijving.tex}
+\section{Probleemanalyse}
+\input{probleemanalyse.tex}
+\section{Ontwerp}
+\input{ontwerp.tex}
+\section{Programmatekst}
+\input{programmatekst.tex}
+\section{Testresultaten}
+\input{testresultaten.tex}
+\section{Evaluatie}
+\input{evaluatie.tex}
+\end{document}
