@@ -1,3 +1,12 @@
 Het programma dat geschreven moet worden moet alle vruchtencombinaties langsgaan die 100 vruchten opleveren. Daarnaast moet het programma van deze combinaties alleen de combinaties naar het scherm schrijven die zorgen voor een totaalbedrag van \euro 100,-.
 
-Niet alle combinaties die 100 vruchten leveren hoeven echter worden nagegaan. Als een sinaasappel bijvoorbeeld \euro60,- kost, hoef je niet te controleren of twee sinaasappels en \'e\'en meloen samen precies \euro 100,- kosten; het programma kan stoppen na \'e\'en sinaasappel. Dit zal moeten worden verwerkt in de conditie van de loop die in het programma gebruikt gaat worden.
+Niet alle combinaties die 100 vruchten leveren hoeven echter worden nagegaan. Als een sinaasappel bijvoorbeeld \euro60,- kost, hoef niet gecontroleert te worden of twee sinaasappels en \'e\'en meloen samen precies \euro 100,- kosten; het programma kan stoppen na \'e\'en sinaasappel. 
+Eerst wordt nagegaan wat het maximum is van een van de vruchten, om op basis van die gegevens het maximum van de tweede vrucht te bepalen.
+Als de eerste beide maxima gevonden zijn is het realatief eenvoudig om het maximum van de derde vrucht te vinden.
+Naar het maximum van de derde vrucht hoeft niet lang gezocht te worden, het maximum aantal vruchten is immers bekend, en dus wordt alleen nagegaan of het aantal melonen dat totaal 100 vruchten maakt ook een totaal prijs van \euro 100 oplevert.
+
+Vervolgens wordt het Maximum -1 genomen van de tweede vrucht en  daarmee bepaalt of deze, aangevult met meloen, voldoet aan de 100 vruchten \euro100 regel.
+Als alle combinaties van de tweede vrucht gecheckt zijn wordt het aantal van de eerste vruchten met 1 verhoogd en worden ook voor deze alle combinaties bepaalt.
+Dit gaat door totdat van het maximum van de eerste vrucht alle combinaties bepaalt zijn.
+
+Op deze manier worden alle combinaties gegeven, als men immers alle combinaties van de eerste twee vruchten heeft vastgesteld moeten dat ook alle combinaties van de derde vrucht zijn.
