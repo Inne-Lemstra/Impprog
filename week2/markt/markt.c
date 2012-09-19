@@ -27,10 +27,10 @@ int main(int argc, char *argv[]) {
   if(sinaasappelPrijs==0){
     maxSinaas= 99; /* 99, want er moet minimaal 1 andere vrucht bij. Anders kom je niet aan 100 euro. */
   } else {
-    maxSinaas = 10000 / sinaasappelPrijs; /* Zoveel sinaasappels kan je kopen voor 100 euro. */
+    maxSinaas = 100000/sinaasappelPrijs; /* Zoveel sinaasappels kan je kopen voor 100 euro. */
   }
   
-  for(sinaasIndex=0; sinaasIndex<=maxSinaas; sinaasIndex++){
+  for(sinaasIndex=0; sinaasIndex<=maxSinaas && sinaasIndex <= 100; sinaasIndex++){
     geldSinaas = sinaasIndex * sinaasappelPrijs;
     
     /* Berekent het maximaal aantal grapefruits dat eventueel in een combinatie kan voorkomen. */
@@ -40,13 +40,8 @@ int main(int argc, char *argv[]) {
       maxGrape = (10000 - geldSinaas)/grapefruitPrijs; /* Als grapefruitPrijs niet nul is, is het maximaal aantal grapefruits afhankelijk van het geld dat je nog over hebt. */
     }
     
-    for(grapeIndex = 0; grapeIndex <= maxGrape; grapeIndex++){
+    for(grapeIndex = 0; grapeIndex <= maxGrape && grapeIndex <= 100 - sinaasIndex; grapeIndex++){
       maxMel = 100 - sinaasIndex - grapeIndex; /* Bepaalt het resterende aantal meloenen om 100 vruchten te krijgen. */
-      
-      /* Het is mogelijk dat maxMel negatief wordt. Als dit gebeurt, ga uit de nested for-loop, want grapeIndex is toch al te hoog, en wordt anders alleen maar hoger. */
-      if (maxMel < 0) {
-        break;
-      }
       
       geldGrape = grapeIndex * grapefruitPrijs;
       geldMel = maxMel * meloenPrijs;
