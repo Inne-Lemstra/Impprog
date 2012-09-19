@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
       geldMel = maxMel * meloenPrijs;
       
       /* Controleer uiteindelijk of het totale bedrag 100 euro is. Als dit zo is: Print combinatie. */
-      if(geldSinaas + geldGrape + geldMel == 100000){
+      if(geldSinaas + geldGrape + geldMel == 10000){
         printf("%d\t\t%d\t\t%d \n", sinaasIndex, grapeIndex, maxMel);
       }
     }
