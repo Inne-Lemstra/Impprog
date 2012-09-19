@@ -1,7 +1,14 @@
-Als eerste worden drie variabelen gedeclareert voer de in voer van de stukprijs van de drie vruchten, dit zijn respectievelijk {\tt sinaasappelPrijs grapefruitPrijs en meloenPrijs}.
-vervolgens wordt aan de gebruiker gevraagt de bedragen in eurocenten van de vruchten  in te voeren.
+Als eerste worden drie variabelen gedeclareerd, voor de invoer van de stukprijs van de drie vruchten, dit zijn respectievelijk {\tt sinaasappelPrijs grapefruitPrijs en meloenPrijs}.
+Verder worden de variabelen maxSinaas, maxGrape en maxMel gedeclareerd voor het tellen van het maximum aantal van de desbetreffende vrucht.
+De index voor de sinaasappels en de grapefruits, die als doel heeft de loop te tellen, worden gedeclareerd als sinaasIndex en grapeIndex.
+Tenslotte worden er nog variabelen gedeclareerd voor het totaal bedrag uitgegeven per vrucht, dit zijn geldSinaas, geldGrape, geldMel.
+
+vervolgens wordt aan de gebruiker gevraagd de bedragen in eurocenten van de vruchten  in te voeren.
 Dit gebeurt uiteraard door een {\tt scanf} functie.
 
-Nu moeten er nog vijf variabelen gedeclareert worden, twee voor de index van de {\tt for-loops} en 3 voor het totaal bedrag van per vrucht.
-Er worden maar twee {\tt for-loops} gebruikt in het programma want alsl de eerste twee vruchten vast staan hoeft er maar een combinatie van drie vruchten gecontroleert te worden.
-  
+Als alle waarden ingevoerd zijn, wordt gecontroleerd of de prijs van de sinaasappels 0 is.
+Mocht dit het geval zijn dan wordt maxSinaas 0, omdat er minimaal een andere vrucht nodig is om op een bedrag van \euro100 te komen.
+Is de sinaasappelprijs niet 0 dan is maxSinaas het aantal sinaasappels verkregen met \euro100 \footnote{Het is mogelijk dat dit aantal kan groter is dan 100, hier is rekening mee gehouden in de loop}
+
+Nu volgt een constructie van twee \tt {for-loops}.
+In de eerste, die optelt van 0 sinaasappels tot maxSinaas, 
