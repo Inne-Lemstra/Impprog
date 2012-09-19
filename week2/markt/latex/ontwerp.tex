@@ -11,5 +11,8 @@ Mocht dit het geval zijn dan wordt maxSinaas 0, omdat er minimaal een andere vru
 Is de sinaasappelprijs niet 0 dan is maxSinaas het aantal sinaasappels verkregen met \euro100 \footnote{Het is mogelijk dat dit aantal kan groter is dan 100, hier is rekening mee gehouden in de loop}
 
 Nu volgt een constructie van twee {\tt for-loops}.
-In de eerste, die optelt van 0 sinaasappels tot maxSinaas, wordt het bedrag dat besteed wordt aan elke mogelijke aantallen sinaasappels berekent.
-Ook wordt gecheckt of de prijs van de grapefruits 0  
+In de eerste, die optelt van 0 sinaasappels tot maxSinaas of honderd als dat kleiner is, wordt het bedrag dat besteed wordt aan elke mogelijke aantallen sinaasappels berekent.
+Ook wordt gecheckt of de prijs van de grapefruits 0, is dit zo dan is het maximum aantal grapefruits 100 min het de sinaasIndex.
+Is dit niet het geval dan is maxGrape het aantal grapefruits dat gekocht kan worden met \euro100 min het geld al besteed aan de sinaasappels.
+
+Vervolgens begint de tweede {\tt for-loop}, die van max
