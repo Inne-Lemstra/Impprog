@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
       
       /* Het is mogelijk dat maxMel negatief wordt. Als dit gebeurt, ga uit de nested for-loop, want grapeIndex is toch al te hoog, en wordt anders alleen maar hoger. */
       if (maxMel < 0) {
-	break;
+        break;
       }
       
       geldGrape = grapeIndex * grapefruitPrijs;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
       
       /* Check uiteindelijk of het totale bedrag 100 euro is. Als dit zo is: Print combinatie. */
       if(10000 - (geldSinaas + geldGrape + geldMel) == 0){
-	printf("%d\t\t%d\t\t%d \n", sinaasIndex, grapeIndex, maxMel);
+        printf("%d\t\t%d\t\t%d \n", sinaasIndex, grapeIndex, maxMel);
       }
     }
   }
