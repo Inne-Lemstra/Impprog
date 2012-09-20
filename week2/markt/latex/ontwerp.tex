@@ -12,14 +12,14 @@ Is de sinaasappelprijs niet 0 dan is {\tt maxSinaas} het aantal sinaasappels te 
 
 Nu volgt een constructie van twee {\tt for}-loops.
 In de eerste, die optelt van 0 sinaasappels tot {\tt maxSinaas} (of honderd, als dat kleiner is), wordt het bedrag berekend dat besteed wordt aan elk mogelijk aantal sinaasappels.
-Ook wordt gecheckt of de prijs van de grapefruits 0 is, is dit zo dan is het maximum aantal grapefruits 100 min {\tt sinaasIndex}.
+Ook wordt gecheckt of de prijs van de grapefruits 0 is, is dit zo dan is het maximum aantal grapefruits 100 $-$ {\tt sinaasIndex}.
 Is dit niet het geval, dan is {\tt maxGrape} het aantal grapefruits dat gekocht kan worden met het huidige resterende geld.
 
-Vervolgens begint de tweede {\tt for}-loop, die van 0 tot {\tt maxGrape}, of honderd min {\tt sinaasIndex} loopt, als dat minder is. Hier wordt het bedrag dat besteed wordt aan de mogelijke aantallen grapefruits berekend.
+Vervolgens begint de tweede {\tt for}-loop, die van 0 tot {\tt maxGrape}, of honderd $-$ {\tt sinaasIndex} loopt, als dat minder is. Hier wordt het bedrag dat besteed wordt aan de mogelijke aantallen grapefruits berekend.
 Ook kan het aantal meloenen en het bedrag wat hier aan besteed wordt berekend worden binnen deze lus.
 Het maximaal aantal meloenen is het aantal dat je nodig hebt om van het totaal aantal vruchten 100 te maken.
 
-Uiteindelijk word gecontroleerd of het uitgegeven geld, {\tt geldSinaas} + {\tt geldGrape} + {\tt geldMel}, precies 100 is.
+Uiteindelijk word gecontroleerd of het uitgegeven geld, {\tt geldSinaas} + {\tt geld}-\\{\tt Grape} + {\tt geldMel}, precies 100 is.
 Of het aantal 100 is hoeft niet gecontroleerd te worden, dit volgt uit de selectie die hierboven gedaan is.
 Voor het testen van het aantal meloenen is geen {\tt for}-loop nodig, want {\tt maxMel} is het enige aantal vruchten dat voor een vruchtentotaal van 100 zorgt.
 Als er aan de controle wordt voldaan, worden de combinaties geprint.
