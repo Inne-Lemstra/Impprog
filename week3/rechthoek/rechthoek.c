@@ -23,7 +23,9 @@ void tekenZijden(int breedte, int hoogte, char c) {
  * wordt voor de rand.
  */
 void tekenRechthoek(int breedte, int hoogte, char c) {
-  
+  tekenLijn(breedte, c);
+  tekenZijden(breedte, hoogte, c);
+  tekenLijn(breedte,c);
 }
 
 int main(int argc, char*argv[]) {
