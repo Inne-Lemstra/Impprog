@@ -8,9 +8,9 @@
 void tekenLijn(int breedte, char c) {
   int index;
   for (index = 0; index < breedte; index++) {
-    putchar(c);
+    printf("%c", c);
   }
-  putchar('\n');
+  printf("\n");
 }
 
 /*
