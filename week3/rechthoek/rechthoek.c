@@ -14,7 +14,17 @@ void tekenLijn(int breedte, char c) {
  * van de rechthoek.
  */
 void tekenZijden(int breedte, int hoogte, char c) {
-  
+  int i;
+  for(i=2;i<hoogte;i++){
+    int aantalspaties=breedte-2;
+    putchar(c);
+    int counter;
+    for(counter=1;counter<=aantalspaties; i++){
+      putchar(' ');
+    }
+    putchar(c);
+    putchar('\n');
+  }
 }
 
 /*
