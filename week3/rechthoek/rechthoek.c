@@ -6,7 +6,11 @@
  * bestaande uit het character c.
  */
 void tekenLijn(int breedte, char c) {
-  
+  int index;
+  for (index = 0; index < breedte; index++) {
+    putchar(c);
+  }
+  putchar('\n');
 }
 
 /*
