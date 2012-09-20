@@ -18,15 +18,15 @@ void tekenLijn(int breedte, char c) {
  * van de rechthoek.
  */
 void tekenZijden(int breedte, int hoogte, char c) {
-  int i;
-  for(i=2;i<hoogte;i++){
-    int aantalspaties=breedte-2;
+  int index1;
+  for (index1 = 2; index1 < hoogte; index1++){
+    int aantalspaties = breedte - 2;
     printf("%c", c);
-    int counter;
-    for(counter=1;counter<=aantalspaties; i++){
+    int index2;
+    for (index2 = 1; index2 <= aantalspaties; index2++){
       printf(" ");
     }
-    printf("%d", c);
+    printf("%c", c);
     printf("\n");
   }
 }
