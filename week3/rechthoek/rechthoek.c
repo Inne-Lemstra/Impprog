@@ -21,13 +21,13 @@ void tekenZijden(int breedte, int hoogte, char c) {
   int i;
   for(i=2;i<hoogte;i++){
     int aantalspaties=breedte-2;
-    putchar(c);
+    printf("%c", c);
     int counter;
     for(counter=1;counter<=aantalspaties; i++){
-      putchar(' ');
+      printf(" ");
     }
-    putchar(c);
-    putchar('\n');
+    printf("%d", c);
+    printf("\n");
   }
 }
 
