@@ -1,11 +1,35 @@
-Als eerste worden drie variabelen gedeclareert voer de in voer van de stukprijs van de drie vruchten, dit zijn respectievelijk {\tt sinaasappelPrijs grapefruitPrijs en meloenPrijs}.
-vervolgens wordt aan de gebruiker gevraagt de bedragen in eurocenten van de vruchten  in te voeren.
-Dit gebeurt uiteraard door een {\tt scanf} functie.
+Als eerste worden drie variabelen gedeclareerd, voor de invoer van de stukprijs van de drie vruchten, dit zijn {\tt sinaasappelPrijs}, {\tt grapefruitPrijs} en {\tt meloenPrijs}.
+Verder worden de variabelen {\tt maxSinaas}, {\tt maxGrape} en {\tt maxMel} gedeclareerd voor het tellen van het maximale aantal van de desbetreffende vrucht.
+De index voor de sinaasappels en de grapefruits, die als doel hebben de loops te tellen, worden gedeclareerd als {\tt sinaasIndex} en {\tt grapeIndex}.
+Tenslotte worden er nog variabelen gedeclareerd voor het totaal uitgegeven bedrag per vrucht, dit zijn {\tt geldSinaas}, {\tt geldGrape} en {\tt geldMel}.
 
-IETS OVER CONTROLE VAN PRIJS == 0
+Vervolgens wordt aan de gebruiker gevraagd de bedragen van de vruchten in eurocenten in te voeren.
+Dit gebeurt uiteraard met de {\tt scanf}-functie.
+
+Als alle waarden ingevoerd zijn, wordt gecontroleerd of de prijs van een enkele sinaasappel 0 is.
+Mocht dit het geval zijn dan wordt {\tt maxSinaas} 99, omdat er minimaal een andere vrucht nodig is om op een bedrag van \euro100,- te komen.
+Is de sinaasappelprijs niet 0 dan is {\tt maxSinaas} het aantal sinaasappels te verkrijgen met \euro100,-.\footnote{Het is mogelijk dat dit aantal kan groter is dan 100, hier is rekening mee gehouden in de loop.}
+
+Nu volgt een constructie van twee {\tt for}-loops.
+In de eerste, die optelt van 0 sinaasappels tot {\tt maxSinaas} (of honderd, als dat kleiner is), wordt het bedrag berekend dat besteed wordt aan elk mogelijk aantal sinaasappels.
+Ook wordt gecheckt of de prijs van de grapefruits 0 is, is dit zo dan is het maximum aantal grapefruits 100 $-$ {\tt sinaasIndex}.
+Is dit niet het geval, dan is {\tt maxGrape} het aantal grapefruits dat gekocht kan worden met het huidige resterende geld.
+
+Vervolgens begint de tweede {\tt for}-loop, die van 0 tot {\tt maxGrape}, of honderd $-$ {\tt sinaasIndex} loopt, als dat minder is. Hier wordt het bedrag dat besteed wordt aan de mogelijke aantallen grapefruits berekend.
+Ook kan het aantal meloenen en het bedrag wat hier aan besteed wordt berekend worden binnen deze lus.
+Het maximaal aantal meloenen is het aantal dat je nodig hebt om van het totaal aantal vruchten 100 te maken.
+
+Uiteindelijk word gecontroleerd of het uitgegeven geld, {\tt geldSinaas} + {\tt geld}-\\{\tt Grape} + {\tt geldMel}, precies 100 is.
+Of het aantal 100 is hoeft niet gecontroleerd te worden, dit volgt uit de selectie die hierboven gedaan is.
+Voor het testen van het aantal meloenen is geen {\tt for}-loop nodig, want {\tt maxMel} is het enige aantal vruchten dat voor een vruchtentotaal van 100 zorgt.
+Als er aan de controle wordt voldaan, worden de combinaties geprint.
+
+Vervolgens begint de binnenste loop weer opnieuw en wordt {\tt grapeIndex} 2, nu wordt gecontroleerd of dit voor \euro100,- zorgt. Zo gaat het even door, en worden alle mogelijke combinaties gecontroleerd.
+
 
 Nu moeten er nog vijf variabelen gedeclareert worden, twee voor de index van de {\tt for-loops} en 3 voor het totaal bedrag van per vrucht.
 Er worden maar twee {\tt for-loops} gebruikt in het programma want alsl de eerste twee vruchten vast staan hoeft er maar een combinatie van drie vruchten gecontroleert te worden.
   
 Het programma bestaat dus uit 2 {\tt for-loops}, de eerst  bepaalt loopt van 0 tot het maximum aantal sinaasappels (maxSinaas).
 Hier wordt het totaal uitgegeven bedrag voor sinaasappels bepaalt, door de stukprijs te vermenigvuldigen met het aantal (sinaasIndex).
+

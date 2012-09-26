@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(int argc, char *argv[]) {
   int invoer;
   long resultaat = 1;
   printf("Van welk getal moet de faculteit worden berekend: ");

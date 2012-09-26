@@ -1,8 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(int argc, char *argv[]) {
   int sinaasappelPrijs, grapefruitPrijs, meloenPrijs;
+  
+  /* Variabelen worden gebruikt om het maximaal aantal vruchten dat van dat soort op dat moment kunnen worden gekocht. */
+  int maxSinaas, maxGrape, maxMel;
+  
+  /* Worden gebruikt om het aantal sinaasappels en grapefruits om dat moment aan te geven. */
+  int sinaasIndex, grapeIndex;
+  
+  /* Worden gebruikt voor het totale bedrag dat besteed wordt aan de bijbehorende vrucht. */
+  int geldSinaas, geldGrape, geldMel;
+  
+  /* Invoer van variabelen en opmaak van een deel van de tabel. */
   printf("Van alle markten thuis\n");
   printf("De prijs van een sinaasappel: ");
   scanf("%d", &sinaasappelPrijs);
@@ -10,48 +21,41 @@ int main() {
   scanf("%d", &grapefruitPrijs);
   printf("De prijs van een meloen     : ");
   scanf("%d", &meloenPrijs);
-  putchar('\n');
+  printf("\nSinaasappel\tGrapefruit\tMeloen\n");
   
-  int maxSinaas, maxGrape, maxMel;
+  /* Berekent het maximaal aantal sinaasappels dat eventueel in een combinatie kan voorkomen. */
   if(sinaasappelPrijs==0){
-    maxSinaas= 99; /* 99, want er moet minimaal 1 andere vrucht bij. Anders kom je niet aan 100 euro. */
+    /* maxSinaas = 99, want er moet minimaal 1 andere vrucht bij. Anders kom je niet aan 100 euro. */
+    maxSinaas= 99;
   } else {
-    maxSinaas = 10000 / sinaasappelPrijs; /* Hoeveel sinaasappels kan je kopen voor 100 euro? */
+    /* Zoveel sinaasappels kan je kopen voor 100 euro. */
+    maxSinaas = 100000/sinaasappelPrijs;
   }
   
-  printf("Sinaasappel\tGrapefruit\tMeloen\n");
-  
-  int sinaasIndex;
-  int grapeIndex;
-  
-  /* Wordt gebruikt voor het totale bedrag dat besteed wordt aan de bijbehorende vrucht. */
-  int geldSinaas;
-  int geldGrape;
-  int geldMel;
-  
-  for(sinaasIndex=0; sinaasIndex<=maxSinaas; sinaasIndex++){
-
+  for(sinaasIndex=0; sinaasIndex<=maxSinaas && sinaasIndex <= 100; sinaasIndex++){
+    geldSinaas = sinaasIndex * sinaasappelPrijs;
+    
+    /* Berekent het maximaal aantal grapefruits dat eventueel in een combinatie kan voorkomen. */
     if(grapefruitPrijs==0){
-      maxGrape = 100 - sinaasIndex; /* Als grapefruits gratis zijn is het maximaal aantal grapefruits 100 min het aantal sinaasappels dat je al hebt.  */
+      /* Als grapefruits gratis zijn is het maximaal aantal grapefruits 100 min het aantal sinaasappels dat je al hebt. */
+      maxGrape = 100 - sinaasIndex;
     } else {
-      maxGrape = (10000 - sinaasIndex * sinaasappelPrijs)/grapefruitPrijs; /* Anders is het maximaal aantal grapefruits afhankelijk van het geld dat je nog nodig hebt. */
+      /* Als grapefruits niet gratis zijn, is het maximaal aantal grapefruits afhankelijk van het geld dat je nog over hebt. */
+      maxGrape = (10000 - geldSinaas)/grapefruitPrijs;
     }
     
-    geldSinaas= sinaasIndex * sinaasappelPrijs;
-    for(grapeIndex = 0; grapeIndex <= maxGrape; grapeIndex++){
-      maxMel = 100 - sinaasIndex - grapeIndex; /* Bepaalt het resterende aantal meloenen om 100 vruchten te krijgen. */
-      if (maxMel < 0) { /* Het is mogelijk dat maxMel negatief wordt. Als dit gebeurt, ga uit de nested for-loop, want grapeIndex is toch al te hoog, en wordt anders alleen maar hoger. */
-	break;
-      }
-      
+    for(grapeIndex = 0; grapeIndex <= maxGrape && grapeIndex <= 100 - sinaasIndex; grapeIndex++){
       geldGrape = grapeIndex * grapefruitPrijs;
+      
+      /* Bepaalt het resterende aantal meloenen om 100 vruchten te krijgen. */
+      maxMel = 100 - sinaasIndex - grapeIndex;
       geldMel = maxMel * meloenPrijs;
       
-      if(10000 - (geldSinaas + geldGrape + geldMel) == 0){ /* Check uiteindelijk of het totale bedrag 100 euro is. Als dit zo is: Print combinatie. */
-	printf("%d\t\t%d\t\t%d \n", sinaasIndex, grapeIndex, maxMel);
+      /* Controleer uiteindelijk of het totale bedrag 100 euro is. Als dit zo is: Print combinatie. */
+      if(geldSinaas + geldGrape + geldMel == 10000){
+        printf("%d\t\t%d\t\t%d \n", sinaasIndex, grapeIndex, maxMel);
       }
     }
   }
   return 0;
 }
-
